@@ -65,10 +65,10 @@ public class ClosestPair {
         int p1 = 0, p2 = 0;
         for(int i = 0; i < points.length; i++) {
             for(int j = i + 1; j < points.length; j++) {
-                distances[iterations] = getDistance(i,j); //
-                if (distances[iterations] < closest) {
+                distances[iterations] = getDistance(i,j); //get distances of all points
+                if (distances[iterations] < closest) { //find smallest distance
                     closest = distances[iterations];
-                    p1 = i;
+                    p1 = i; 
                     p2 = j;
                 }
                 String s = String.format("Distance from %d to %d is %f", i, j, distances[iterations]);
@@ -76,7 +76,7 @@ public class ClosestPair {
                 iterations++;
             }
         }
-        StdOut.println("Number of operations: " + iterations);
+        StdOut.println("Number of operations: " + iterations); 
         String s = String.format("Closest pair is points %s and %s: %f", p1, p2, closest);
         highlightPoints(p1,p2);
         StdOut.println(s);

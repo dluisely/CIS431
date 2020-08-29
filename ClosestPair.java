@@ -1,4 +1,3 @@
-import edu.princeton.cs.introcs.*;
 import edu.princeton.cs.algs4.*;
 /**
  * Write a Point2D client that takes an integer value N from the command line, generates N 
@@ -40,7 +39,7 @@ public class ClosestPair {
     }
     
     public void closestPair() {
-        double[] distances = new double[points.length * 10];
+        double[] distances = new double[(points.length - 1) * (points.length)/2];
         int iterations = 0;
         double closest = 1;
         int p1 = 0, p2 = 0;
@@ -67,7 +66,7 @@ public class ClosestPair {
     }
     
     public static void main(String[] args) {
-        int nPoints = 4;
+        int nPoints = 20;
         ClosestPair cp = new ClosestPair(nPoints);
         
         cp.randomPoints();

@@ -34,8 +34,21 @@ public class ClosestPair {
         }
     }
     
+    public void showDistance(int i1, int i2) {
+        Point2D p1 = points[i1];
+        Point2D p2 = points[i2];
+        double dist = p1.distanceTo(p2);
+        String s = String.format("Distance from %d to %d is %f",
+                i1,i2,dist);
+        StdOut.println(s);
+    }
+    
     public static void main(String[] args) {
         int nPoints = 20;
         ClosestPair cp = new ClosestPair(nPoints);
+        
+        cp.randomPoints();
+        cp.plotPoints();
+        cp.showDistance(3, 6);
     }
 }

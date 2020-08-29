@@ -1,18 +1,24 @@
 #BlueJ class context
 comment0.target=ClosestPair
-comment0.text=\n\ Write\ a\ Point2D\ client\ that\ takes\ an\ integer\ value\ N\ from\ the\ command\ line,\ generates\ N\ \n\ random\ points\ in\ the\ unit\ square,\ and\ computes\ the\ distance\ separating\ the\ closest\ pair\ of\ points.\n\n\ @author\ Luisely\ Doza\n\ @version\ August\ 28,\ 2020\n
+comment0.text=\n\ Generates\ N\ random\ points\ in\ the\ unit\ square,\ and\ computes\ the\ distance\ separating\ the\ closest\ pair\ of\ points.\n\n\ @author\ Luisely\ Doza\n\ @version\ August\ 28,\ 2020\n
 comment1.params=n
 comment1.target=ClosestPair(int)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ PointDistance\n\ \n\ @param\ n\ the\ number\ of\ points\n
 comment2.params=
 comment2.target=void\ randomPoints()
+comment2.text=\n\ Generate\ random\ coordinates\ for\ n\ points\n
 comment3.params=
 comment3.target=void\ plotPoints()
+comment3.text=\n\ Plot\ points\ in\ array\ to\ frame\n
 comment4.params=i1\ i2
 comment4.target=double\ getDistance(int,\ int)
+comment4.text=\n\ Find\ distance\ between\ two\ points\n\ \n\ @param\ i1\ index\ of\ first\ point\n\ @param\ i2\ index\ of\ second\ point\n\ @return\ the\ distance\ of\ both\ points\n
 comment5.params=
 comment5.target=void\ closestPair()
+comment5.text=\n\ Find\ shortest\ distance\ and\ corresponding\ points\n
 comment6.params=p1\ p2
 comment6.target=void\ highlightPoints(int,\ int)
+comment6.text=\n\ Highlight\ closest\ pair\ on\ plot\n\ \n\ @param\ p1\ First\ point\ to\ highlight\n\ @param\ p2\ Second\ point\ to\ highlight\n
 comment7.params=args
 comment7.target=void\ main(java.lang.String[])
 numComments=8

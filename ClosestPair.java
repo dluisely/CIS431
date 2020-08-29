@@ -39,26 +39,39 @@ public class ClosestPair {
         return dist;
     }
     
-    public double[] allDistances() {
-        double[] distances = new double[points.length * 2];
+    public void closestPair() {
+        double[] distances = new double[points.length * 10];
+        int iterations = 0;
+        double closest = 1;
+        int p1 = 0, p2 = 0;
         for(int i = 0; i < points.length; i++) {
-            for(int j = i; j < points.length; j++) {
-                if (i == j) continue;
-                distances[i] = getDistance(i,j);
-                String s = String.format("Distance from %d to %d is %f",
-                    i,j,distances[i]);
+            for(int j = i + 1; j < points.length; j++) {
+                distances[iterations] = getDistance(i,j);
+                if (distances[iterations] < closest) {
+                    closest = distances[iterations];
+                    p1 = i;
+                    p2 = j;
+                }
+                String s = String.format("Distance from %d to %d is %f", i, j, distances[iterations]);
                 StdOut.println(s);
+                iterations++;
             }
         }
-        return distances;
+        StdOut.println("Number of operations: " + iterations);
+        String s = String.format("Closest pair is points %s and %s: %f", p1, p2, closest);
+        StdOut.println(s);
+    }
+    
+    public void highlightPoints () {
+        
     }
     
     public static void main(String[] args) {
-        int nPoints = 5;
+        int nPoints = 4;
         ClosestPair cp = new ClosestPair(nPoints);
         
         cp.randomPoints();
         cp.plotPoints();
-        cp.allDistances();
+        cp.closestPair();
     }
 }

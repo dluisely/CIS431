@@ -58,15 +58,21 @@ public class ClosestPair {
         }
         StdOut.println("Number of operations: " + iterations);
         String s = String.format("Closest pair is points %s and %s: %f", p1, p2, closest);
+        highlightPoints(p1,p2);
         StdOut.println(s);
     }
     
-    public void highlightPoints () {
-        
+    public void highlightPoints(int p1, int p2) {
+        StdDraw.setPenRadius(0.05);
+        StdDraw.setPenColor(StdDraw.YELLOW);
+        Point2D h1 = points[p1];
+        Point2D h2 = points[p2];
+        h1.draw();
+        h2.draw();
     }
     
     public static void main(String[] args) {
-        int nPoints = 20;
+        int nPoints = 100;
         ClosestPair cp = new ClosestPair(nPoints);
         
         cp.randomPoints();

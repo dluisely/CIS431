@@ -1,7 +1,5 @@
 import edu.princeton.cs.introcs.*;
 import edu.princeton.cs.algs4.*;
-
-import java.util.*;
 /**
  * Write a Point2D client that takes an integer value N from the command line, generates N 
  * random points in the unit square, and computes the distance separating the closest pair of points.
@@ -34,21 +32,33 @@ public class ClosestPair {
         }
     }
     
-    public void showDistance(int i1, int i2) {
+    public double getDistance(int i1, int i2) {
         Point2D p1 = points[i1];
         Point2D p2 = points[i2];
         double dist = p1.distanceTo(p2);
-        String s = String.format("Distance from %d to %d is %f",
-                i1,i2,dist);
-        StdOut.println(s);
+        return dist;
+    }
+    
+    public double[] allDistances() {
+        double[] distances = new double[points.length * 2];
+        for(int i = 0; i < points.length; i++) {
+            for(int j = i; j < points.length; j++) {
+                if (i == j) continue;
+                distances[i] = getDistance(i,j);
+                String s = String.format("Distance from %d to %d is %f",
+                    i,j,distances[i]);
+                StdOut.println(s);
+            }
+        }
+        return distances;
     }
     
     public static void main(String[] args) {
-        int nPoints = 20;
+        int nPoints = 5;
         ClosestPair cp = new ClosestPair(nPoints);
         
         cp.randomPoints();
         cp.plotPoints();
-        cp.showDistance(3, 6);
+        cp.allDistances();
     }
 }
